@@ -56,7 +56,7 @@ public class Checker {
             int sumYearExpense = year.get(0);
             int sumMonthExpense = month.get(0);
             int sumYearIncome = year.get(1);
-            int sumMonthIncome = year.get(1);
+            int sumMonthIncome = month.get(1);
             if(sumMonthExpense != sumYearExpense){
                 check = false;
                 System.out.println("Ошибка данных в месяце " + i);

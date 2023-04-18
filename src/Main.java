@@ -22,12 +22,29 @@ public class Main {
                 yearlyReport.loadFile("resources/y.2021.csv");
                 System.out.println("Считывание файлов прошло успешно");
             }else if (command==3){
-                boolean answer = checker.check();
-                System.out.println("Результат проверки " + answer);
+                if (!monthlyReport.months.isEmpty()) {
+                    if (!yearlyReport.years.isEmpty()) {
+                        boolean answer = checker.check();
+                        System.out.println("Результат проверки " + answer);
+                    } else{
+                        System.out.println("Считайте годовой отчет");
+                    }
+                } else{
+                    System.out.println("Считайте месячный отчет");
+                }
             }else if (command==4){
-                monthlyReport.monthReport();
+                if (!monthlyReport.months.isEmpty()) {
+                    monthlyReport.monthReport();
+                }
+                else{
+                    System.out.println("Считайте месячный отчет");
+                }
             }else if (command==5) {
-                yearlyReport.yearReport();
+                if (!yearlyReport.years.isEmpty()) {
+                    yearlyReport.yearReport();
+                } else{
+                    System.out.println("Считайте годовой отчет");
+                }
             }else if (command==0) {
                 System.out.println("Выполняется команда: Выход");
                 System.out.println("Пока!");
